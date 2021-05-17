@@ -19,8 +19,16 @@
 3. `minikube service node-2021-service` - for getting the service mapping to your actual system.
 
 Debug and further learn by describing a pod:
+kubectl describe <object> <objectname>
+kubcetl get pods --watch
+kubcetl edit <object> <name>
 
 1. also a pod can have livenessProbe to restart pod if pod is not responding. add interval, timeout and stuff.
 2. add a ready ness probe to see it is ready to recieve incoming traffic.
     
+
+# Jobs/CronJobs
+1. reguarly running process, can be triggered automatically by time as cron jobs, when specified
+2. creates a pod and waits until completion, restarts for failure, or pod delete/down.
+3. cronjobs, run at schedule time and create a job.
     

@@ -1,0 +1,13 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: myjob
+spec:
+  ttlSecondsAfterFinished: 100
+  template:
+    spec:
+      containers:
+      - name: samplejob
+        image: nginx:alpine
+        command: ["sleep","1000"]
+      restartPolicy: Never
