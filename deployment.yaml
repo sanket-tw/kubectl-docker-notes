@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-2021-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: node-2021
+  template:
+    metadata:
+      labels:
+        app: node-2021
+    spec:
+      containers:
+      - name: node-2021-container
+        image: sanket0694/node-2021
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 3000
